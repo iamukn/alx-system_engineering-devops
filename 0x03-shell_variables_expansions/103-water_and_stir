@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "%.bestcholf\n" "$((WATER+STIR))"
