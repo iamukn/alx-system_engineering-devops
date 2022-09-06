@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((128+$FIG))
+echo $((128+$TRUEKNOWLEDGE))
