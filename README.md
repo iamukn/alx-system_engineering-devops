@@ -1,1 +1,1 @@
-First independent bash task
+My First independent task on bash!
