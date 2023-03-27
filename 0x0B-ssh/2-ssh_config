@@ -1,0 +1,5 @@
+# Configure ssh client so that you can connect without a pasword
+
+SendEnv LANG LC_*
+IdentityFile ~/.ssh/school
+PasswordAuthentication no
