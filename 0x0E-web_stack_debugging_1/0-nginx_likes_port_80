@@ -4,7 +4,5 @@
 # Replace it with the default file in the site enabled dir
 # create a symbolic link for this
 # note: -s creates a symbolic link, -f deletes the existing file and replaces it
-# sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo rm /etc/nginx/sites-available/default
-sudo cp /etc/nginx/sites-enabled/default /etc/nginx/sites-available/
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
