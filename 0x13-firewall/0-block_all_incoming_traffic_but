@@ -1,0 +1,8 @@
+sudo apt install ufw
+sudo ufw disable
+sudo default deny incoming
+sudo default deny outging
+sudo allow 22
+sudo allow 443
+sudo allow 80
+sudo ufw enable
