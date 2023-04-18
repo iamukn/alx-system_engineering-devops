@@ -1,0 +1,1 @@
+sudo ufw redirect 8080/TCP to 80/TCP
