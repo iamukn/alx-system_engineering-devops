@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Script that accepts one argument and should run whoami command under the user passed as the argument
+
+if [ "$#" == "1" ]; then
+   sudo -u $1 whoami
+elif [ "$#" -ge "2" ]; then
+    echo "You have not passed any argument"
+fi
