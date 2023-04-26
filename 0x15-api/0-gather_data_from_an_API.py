@@ -3,11 +3,11 @@
 """
 
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
-    employee_Id = argv[1]
+    employee_Id = sys.argv[1]
     baseurl = "https://jsonplaceholder.typicode.com/users"
 
     url = baseurl + "/" + employee_Id
