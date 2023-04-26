@@ -6,14 +6,14 @@ import requests
 from sys import argv
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     employee_Id = argv[1]
     baseurl = "https://jsonplaceholder.typicode.com/users"
 
     url = baseurl + "/" + employee_Id
     res = requests.get(url)
 
-    employeeName = res.json().get("name")
+    employeeName = res.json().get('name')
 
     todos = url + "/todos"
 
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     done_task = []
 
     for datas in task:
-        if datas.get("completed"):
+        if datas.get('completed'):
             done += 1
             done_task.append(datas)
 
@@ -34,4 +34,4 @@ if __name__ == "__main__":
           .format(employeeName, done, len(task)))
 
     for task_title in task:
-        print("\t {0}".format(task_title.get("title")))
+        print("\t {0}".format(task_title.get('title')))
