@@ -27,8 +27,8 @@ if __name__ == '__main__':
 
     for datas in task:
         if datas.get('completed'):
-            done += 1
             done_task.append(datas)
+            done += 1
 
     print("Employee {0} is done with tasks ({1}/{2})"
           .format(employeeName, done, len(task)))
