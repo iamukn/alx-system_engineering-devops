@@ -7,10 +7,10 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    employee_ID = argv[1]
+    employee_Id = argv[1]
     baseurl = "https://jsonplaceholder.typicode.com/users"
 
-    url = baseurl + "/" + employee_ID
+    url = baseurl + "/" + employee_Id
     res = requests.get(url)
 
     employeeName = res.json().get("name")
