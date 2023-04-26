@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Using the GET method to retrieve infomation of employee
-"""
+"""Using the GET method to retrieve infomation"""
 
 import requests
 import sys
@@ -12,17 +11,12 @@ if __name__ == '__main__':
 
     url = baseurl + "/" + employee_Id
     res = requests.get(url)
-
     employeeName = res.json().get('name')
 
     todos = url + "/todos"
-
     response = requests.get(todos)
-
     task = response.json()
-
     done = 0
-
     done_task = []
 
     for datas in task:
