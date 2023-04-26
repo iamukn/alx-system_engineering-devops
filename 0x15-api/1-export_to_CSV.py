@@ -31,6 +31,8 @@ if __name__ == '__main__':
         print("\t {}".format(task.get('title')))
 
     with open(f"{employeeId}.csv", 'w') as f:
+        """ Opening a new file using the ID as the name.CSV"""
+
         for task in tasks:
             f.write('"{}","{}","{}","{}"\n'.format(employeeId,
                     employeeUsername, task.get('completed'),
