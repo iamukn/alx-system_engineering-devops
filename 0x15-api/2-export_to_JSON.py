@@ -17,14 +17,14 @@ if __name__ == '__main__':
     todoUrl = url + "/todos"
     response = requests.get(todoUrl)
     tasks = response.json()
-    dictionary = {employeeId: []}
 
-    for t in tasks:
+    dictionary = {employeeId: []}
+    for task in tasks:
         dictionary[employeeId].append({
-            "task": t.get('title'),
-            "completed": t.get('completed'),
+            "task": task.get('title'),
+            "completed": task.get('completed'),
             "username": employeeUsername
         })
 
-    with open(f'{employeeId}.json', 'w') as file:
+    with open('{}.json'.format(employeeId), 'w') as file:
         json.dump(dictionary, file)
