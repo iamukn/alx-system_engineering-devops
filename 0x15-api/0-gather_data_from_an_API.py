@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-from sys import argv
-import requests
-
 """ Using the GET method to retrieve infomation of employee
 """
+
+import requests
+from sys import argv
+
 
 if __name__ == "__main__":
     employee_ID = argv[1]
