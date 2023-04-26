@@ -1,31 +1,31 @@
 #!/usr/bin/python3
-"""Using the GET method to retrieve infomation"""
+"""Accessing REST API for todo lists of employees"""
 
 import requests
 import sys
 
 
 if __name__ == '__main__':
-    employee_Id = sys.argv[1]
-    baseurl = "https://jsonplaceholder.typicode.com/users"
-    url = baseurl + "/" + employee_Id
+    employeeId = sys.argv[1]
+    baseUrl = "https://jsonplaceholder.typicode.com/users"
+    url = baseUrl + "/" + employeeId
 
-    res = requests.get(url)
-    employeeName = res.json().get('name')
+    response = requests.get(url)
+    employeeName = response.json().get('name')
 
-    todos = url + "/todos"
-    response = requests.get(todos)
-    task = response.json()
+    todoUrl = url + "/todos"
+    response = requests.get(todoUrl)
+    tasks = response.json()
     done = 0
-    done_task = []
+    done_tasks = []
 
-    for datas in task:
-        if datas.get('completed'):
-            done_task.append(datas)
+    for task in tasks:
+        if task.get('completed'):
+            done_tasks.append(task)
             done += 1
 
-    print("Employee {} is done with tasks ({}/{})"
-          .format(employeeName, done, len(task)))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(employeeName, done, len(tasks)))
 
-    for task_title in task:
-        print("\t {}".format(task_title.get('title')))
+    for task in done_tasks:
+        print("\t {}".format(task.get('title')))
