@@ -8,8 +8,8 @@ import sys
 if __name__ == '__main__':
     employee_Id = sys.argv[1]
     baseurl = "https://jsonplaceholder.typicode.com/users"
-
     url = baseurl + "/" + employee_Id
+
     res = requests.get(url)
     employeeName = res.json().get('name')
 
@@ -24,8 +24,8 @@ if __name__ == '__main__':
             done_task.append(datas)
             done += 1
 
-    print("Employee {0} is done with tasks ({1}/{2})"
+    print("Employee {} is done with tasks ({}/{})"
           .format(employeeName, done, len(task)))
 
     for task_title in task:
-        print("\t {0}".format(task_title.get('title')))
+        print("\t {}".format(task_title.get('title')))
