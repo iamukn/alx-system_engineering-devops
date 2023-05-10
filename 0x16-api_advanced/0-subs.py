@@ -20,5 +20,11 @@ def number_of_subscribers(subreddit):
     data = res.json()
 
     total_subscribers = data.get('data').get('subscribers')
+    try:
+        return total_subscribers
 
-    return total_subscribers
+    except Exception:
+        return 0
+
+
+number_of_subscribers('programming')
