@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-from requests import get
-
 """Making a get request to the Reddit APi and
 printing the total subscriber to the console"""
+
+
+from requests import get
 
 
 def number_of_subscribers(subreddit):
