@@ -13,8 +13,9 @@ def top_ten(subreddit):
         return print("None")
 
     url = 'http://www.reddit.com/r/{0}/hot/.json'.format(subreddit)
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
     try:
-        res = get(url)
+        res = get(url, user_agent)
         json = res.json()
         for i in range(10):
             print(json.get('data').get('children')[i].get("data").get("title"))
