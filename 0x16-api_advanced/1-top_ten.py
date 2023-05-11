@@ -16,7 +16,7 @@ def top_ten(subreddit):
     user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
     params = {'limit': 10}
     try:
-        res = get(url, params)
+        res = get(url, headers=user_agent, params=params)
         json = res.json()
         data = json.get('data').get('children')
         for i in data:
