@@ -14,10 +14,12 @@ def top_ten(subreddit):
 
     url = 'http://www.reddit.com/r/{0}/hot/.json'.format(subreddit)
     user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    params = {'limit': 10}
     try:
-        res = get(url, user_agent)
+        res = get(url, params)
         json = res.json()
-        for i in range(10):
-            print(json.get('data').get('children')[i].get("data").get("title"))
+        data = json.get('data').get('children')
+        for i in data:
+            print(i.get("data").get("title"))
     except Exception:
         print("None")
